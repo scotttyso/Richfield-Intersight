@@ -1,0 +1,13 @@
+---
+intersight:
+    policies:
+      san_connectivity:
+        - name: virtualization
+          vhbas:
+            - names: [hba-a, hba-b]
+              fibre_channel_adapter_policy: vmware
+              fibre_channel_network_policies: [vsan-a, vsan-b]
+              fibre_channel_qos_policy: fc-qos
+              placement_pci_order: [0, 1]
+              wwpn_pools: [hba-a, hba-b]
+          wwnn_pool: wwnn

@@ -1,0 +1,29 @@
+---
+intersight:
+    policies:
+      port:
+        - names: [heimdall-ucs-a, heimdall-ucs-b]
+          device_model: UCS-FI-6454
+          port_channel_ethernet_uplinks:
+            - pc_ids: [53]
+              ethernet_network_group_policy: aci
+              flow_control_policy: flow-ctrl
+              interfaces:
+                - port_id: 53
+                - port_id: 54
+              link_aggregation_policy: link-agg
+              link_control_policy: link-ctrl
+          port_channel_fc_uplinks:
+            - pc_ids: [1]
+              fill_pattern: Arbff
+              interfaces:
+                - breakout_port_id: 1
+                  port_id: 1
+                - breakout_port_id: 2
+                  port_id: 1
+              vsan_ids: [100, 200]
+          port_modes:
+            - port_list: [1, 4]
+              custom_mode: FibreChannel
+          port_role_servers:
+            - port_list: 17-18,33-34

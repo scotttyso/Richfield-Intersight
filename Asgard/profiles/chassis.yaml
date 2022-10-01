@@ -1,0 +1,18 @@
+---
+intersight:
+    profiles:
+      chassis:
+        - names_serials: [
+            [heimdall-ucs-1]
+          ]
+          imc_access_policy: kvm
+          power_policy: 5108
+          snmp_policy: snmp
+          thermal_policy: 5108
+        - names_serials: [
+            [heimdall-ucs-2,FOX2501P0BF]
+          ]
+          imc_access_policy: kvm
+          power_policy: 9508
+          snmp_policy: snmp
+          thermal_policy: 9508

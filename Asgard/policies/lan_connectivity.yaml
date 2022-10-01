@@ -1,0 +1,34 @@
+---
+intersight:
+    policies:
+      lan_connectivity:
+        - name: virtualization
+          vnics:
+            - names: [mgmt-A, MGMT-B]
+              ethernet_adapter_policy: vmware
+              ethernet_network_control_policy: cdp
+              ethernet_network_group_policy: mgmt
+              ethernet_qos_policy: Silver
+              mac_address_pools: [mgmt-a, mgmt-b]
+              placement_pci_order: [2, 3]
+            - names: [vmotion-a, vmotion-b]
+              ethernet_adapter_policy: vmware
+              ethernet_network_control_policy: lldp
+              ethernet_network_group_policy: data
+              ethernet_qos_policy: Gold
+              mac_address_pools: [vmotion-a, vmotion-b]
+              placement_pci_order: [4, 5]
+            - names: [storage-a, storage-b]
+              ethernet_adapter_policy: vmware
+              ethernet_network_control_policy: lldp
+              ethernet_network_group_policy: data
+              ethernet_qos_policy: Gold
+              mac_address_pools: [storage-a, storage-b]
+              placement_pci_order: [4, 5]
+            - names: [data-a, data-b]
+              ethernet_adapter_policy: vmware
+              ethernet_network_control_policy: lldp
+              ethernet_network_group_policy: data
+              ethernet_qos_policy: Gold
+              mac_address_pools: [data-a, data-b]
+              placement_pci_order: [4, 5]

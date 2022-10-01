@@ -1,0 +1,75 @@
+---
+intersight:
+    pools:
+      ip:
+        - name: inband
+          ipv4_blocks:
+            - from: 192.168.65.221
+              size: 20
+          ipv4_config:
+            - gateway: 192.168.64.1
+              netmask: 255.255.254.0
+              primary_dns: 10.101.128.15
+              secondary_dns: 10.101.128.16
+        - name: ooband
+          ipv4_blocks:
+            - from: 192.168.65.221
+              size: 20
+          ipv4_config:
+            - gateway: 192.168.64.1
+              netmask: 255.255.254.0
+              primary_dns: 10.101.128.15
+              secondary_dns: 10.101.128.16
+      mac:
+        - name: data-a
+          mac_blocks:
+            - from: 00:25:B5:1A:D0:00
+              size: 1000
+        - name: data-b
+          mac_blocks:
+            - from: 00:25:B5:1B:D0:00
+              size: 1000
+        - name: mgmt-a
+          mac_blocks:
+            - from: 00:25:B5:1A:00:00
+              size: 1000
+        - name: mgmt-b
+          mac_blocks:
+            - from: 00:25:B5:1B:00:00
+              size: 1000
+        - name: storage-a
+          mac_blocks:
+            - from: 00:25:B5:1A:10:00
+              size: 1000
+        - name: storage-b
+          mac_blocks:
+            - from: 00:25:B5:1B:10:00
+              size: 1000
+        - name: vmotion-a
+          mac_blocks:
+            - from: 00:25:B5:1A:20:00
+              size: 1000
+        - name: vmotion-b
+          mac_blocks:
+            - from: 00:25:B5:1B:20:00
+              size: 1000
+      uuid:
+        - name: uuid
+          prefix: 000025B5-0000-0000
+          uuid_blocks:
+            - from: 0000-000000000000
+              size: 1000
+      wwnn:
+        - name: wwnn
+          id_blocks:
+            - from: 20:00:00:25:B5:1F:00:00
+              size: 1000
+      wwpn:
+        - name: hba-a
+          id_blocks:
+            - from: 20:00:00:25:B5:1A:00:00
+              size: 1000
+        - name: hba-b
+          id_blocks:
+            - from: 20:00:00:25:B5:1B:00:00
+              size: 1000

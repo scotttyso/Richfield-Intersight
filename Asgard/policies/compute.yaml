@@ -1,0 +1,73 @@
+---
+intersight:
+    policies:
+      bios:
+        - name: virtualization-m5
+          bios_template: Virtualization
+          # BIOS Customization
+          baud_rate: "115200"
+          console_redirection: "serial-port-a"
+          execute_disable_bit: "disabled"
+          lv_ddr_mode: "auto"
+          serial_port_aenable: "enabled"
+          terminal_type: "vt100"
+
+        - name: virtualization-m6
+          bios_template: M6_Virtualization_tpm
+          # BIOS Customization
+          baud_rate: "115200"
+          console_redirection: "serial-port-a"
+          execute_disable_bit: "disabled"
+          lv_ddr_mode: "auto"
+          serial_port_aenable: "enabled"
+          terminal_type: "vt100"
+
+      boot_order:
+        - name: "m2-pxe"
+          boot_devices:
+            - name: "kvm-dvd"
+              object_type: "boot.VirtualMedia"
+              sub_type: "kvm-mapped-dvd"
+            - name: "m2"
+              object_type: "boot.LocalDisk"
+              slot: "MSTOR-RAID"
+            - name: "PXE"
+              interface_name: "MGMT-A"
+              object_type: "boot.Pxe"
+              slot: "MLOM"
+          boot_mode: "Uefi"
+          enable_secure_boot: false
+        - name: "m2"
+          boot_devices:
+            - name: "kvm-dvd"
+              object_type: "boot.VirtualMedia"
+              sub_type: "kvm-mapped-dvd"
+            - name: "m2"
+              object_type: "boot.LocalDisk"
+              slot: "MSTOR-RAID"
+          boot_mode: "Uefi"
+          enable_secure_boot: true
+        - name: "raid-pxe"
+          boot_devices:
+            - name: "kvm-dvd"
+              object_type: "boot.VirtualMedia"
+              sub_type: "kvm-mapped-dvd"
+            - name: "raid"
+              object_type: "boot.LocalDisk"
+              slot: "MRAID"
+            - name: "pxe"
+              interface_name: "mgmt-a"
+              object_type: "boot.Pxe"
+              slot: "MLOM"
+          boot_mode: "Uefi"
+          enable_secure_boot: false
+        - name: "raid"
+          boot_devices:
+            - name: "kvm-dvd"
+              object_type: "boot.VirtualMedia"
+              sub_type: "kvm-mapped-dvd"
+            - name: "raid"
+              object_type: "boot.LocalDisk"
+              slot: "MRAID"
+          boot_mode: "Uefi"
+          enable_secure_boot: true

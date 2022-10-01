@@ -1,0 +1,15 @@
+---
+intersight:
+    profiles:
+      domain:
+        - name: heimdall-ucs
+          network_connectivity_policy: dns
+          ntp_policy: ntp
+          port_policies: [heimdall-ucs-a, heimdall-ucs-b]
+          snmp_policy: snmp-domain
+          serial_numbers: [FDO2416171W, FDO2416170G]
+          switch_control_policy: switch-ctrl
+          syslog_policy: syslog-domain
+          system_qos_policy: system-qos
+          vlan_policies: [asgard]
+          vsan_policies: [vsan-a, vsan-b]   
