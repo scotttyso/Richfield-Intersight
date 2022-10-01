@@ -13,6 +13,5 @@ intersight:
               native_vlan: true
               vlan_list: 1
             - name: asgard
-              auto_allow_on_uplinks: true
               multicast_policy: mcast
               vlan_list: "101-199,201-299,1000-1199"
