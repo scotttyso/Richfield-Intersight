@@ -17,8 +17,8 @@ intersight:
             - pc_ids: [1]
               fill_pattern: Arbff
               interfaces:
-                  port_id: 1
-                  port_id: 2
+                  - port_id: 1
+                  - port_id: 2
               vsan_ids: [100, 200]
           port_modes:
             - port_list: [1, 4]
