@@ -4,7 +4,7 @@ intersight:
       server:
         - names_serials: [
             [heimdall26,FCH243974WZ],
-            [heimdall27,FCH243974V2],
+            [heimdall27,FCH24397500],
             [heimdall28,FCH243974V2]
           ]
           ucs_server_profile_template: virtualization-m2-pxe
