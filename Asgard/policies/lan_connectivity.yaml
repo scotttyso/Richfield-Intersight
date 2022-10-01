@@ -24,11 +24,11 @@ intersight:
               ethernet_network_group_policy: data
               ethernet_qos_policy: Gold
               mac_address_pools: [storage-a, storage-b]
-              placement_pci_order: [4, 5]
+              placement_pci_order: [6, 7]
             - names: [data-a, data-b]
               ethernet_adapter_policy: vmware
               ethernet_network_control_policy: lldp
               ethernet_network_group_policy: data
               ethernet_qos_policy: Gold
               mac_address_pools: [data-a, data-b]
-              placement_pci_order: [4, 5]
+              placement_pci_order: [8, 9]
