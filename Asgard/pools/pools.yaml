@@ -4,11 +4,11 @@ intersight:
       ip:
         - name: inband
           ipv4_blocks:
-            - from: 192.168.65.221
+            - from: 10.92.101.101
               size: 20
           ipv4_config:
-            - gateway: 192.168.64.1
-              netmask: 255.255.254.0
+            - gateway: 10.92.101.1
+              netmask: 255.255.255.0
               primary_dns: 10.101.128.15
               secondary_dns: 10.101.128.16
         - name: ooband
