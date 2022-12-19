@@ -4,7 +4,7 @@ intersight:
       lan_connectivity:
         - name: virtualization
           vnics:
-            - names: [mgmt-A, MGMT-B]
+            - names: [mgmt-A, mgmt-B]
               ethernet_adapter_policy: vmware
               ethernet_network_control_policy: cdp
               ethernet_network_group_policy: mgmt
