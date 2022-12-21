@@ -1,0 +1,21 @@
+---
+#====================================
+#   Policies -> vlan - Variables
+#====================================
+intersight:
+  policies:
+    multicast:
+      - description: mcast Multicast Policy
+        name: mcast
+    vlan:
+      - description: vlan VLAN Policy
+        name: vlan
+        vlans:
+          - auto_allow_on_uplinks: true
+            multicast_policy: mcast
+            name: default
+            native_vlan: true
+            vlan_list: '1'
+          - multicast_policy: mcast
+            name: default
+            vlan_list: 2-99

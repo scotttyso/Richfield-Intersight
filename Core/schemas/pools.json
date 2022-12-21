@@ -1,0 +1,232 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome7",
+    "definitions": {
+        "Welcome7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "intersight": {
+                    "$ref": "#/definitions/Intersight"
+                }
+            },
+            "required": [
+                "intersight"
+            ],
+            "title": "Welcome7"
+        },
+        "Intersight": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pools": {
+                    "$ref": "#/definitions/Pools"
+                }
+            },
+            "required": [
+                "pools"
+            ],
+            "title": "Intersight"
+        },
+        "Pools": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ip": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IP"
+                    }
+                },
+                "mac": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MAC"
+                    }
+                },
+                "uuid": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UUID"
+                    }
+                },
+                "wwnn": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MAC"
+                    }
+                },
+                "wwpn": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MAC"
+                    }
+                }
+            },
+            "required": [
+                "ip",
+                "mac",
+                "uuid",
+                "wwnn",
+                "wwpn"
+            ],
+            "title": "Pools"
+        },
+        "IP": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "assignment_order": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "ipv4_blocks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Block"
+                    }
+                },
+                "ipv4_config": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IpvConfig"
+                    }
+                },
+                "ipv6_blocks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Block"
+                    }
+                },
+                "ipv6_config": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IpvConfig"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "assignment_order",
+                "description",
+                "ipv4_blocks",
+                "ipv4_config",
+                "name"
+            ],
+            "title": "IP"
+        },
+        "Block": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "from": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "from",
+                "size"
+            ],
+            "title": "Block"
+        },
+        "IpvConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "gateway": {
+                    "type": "string"
+                },
+                "netmask": {
+                    "type": "string"
+                },
+                "primary_dns": {
+                    "type": "string"
+                },
+                "secondary_dns": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "gateway",
+                "primary_dns",
+                "secondary_dns"
+            ],
+            "title": "IpvConfig"
+        },
+        "MAC": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "assignment_order": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "mac_blocks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Block"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "id_blocks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Block"
+                    }
+                }
+            },
+            "required": [
+                "assignment_order",
+                "description",
+                "name"
+            ],
+            "title": "MAC"
+        },
+        "UUID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "assignment_order": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                },
+                "uuid_blocks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Block"
+                    }
+                }
+            },
+            "required": [
+                "assignment_order",
+                "description",
+                "name",
+                "prefix",
+                "uuid_blocks"
+            ],
+            "title": "UUID"
+        }
+    }
+}

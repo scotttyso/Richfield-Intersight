@@ -1,0 +1,25 @@
+---
+defaults:
+  intersight:
+    profiles:
+      chassis:
+        name_suffix: ''
+        action: No-op
+        domain_type: instance
+        target_platform: FIAttached
+        wait_for_completion: false
+      domain:
+        name_suffix: ''
+        action: No-op
+        domain_type: instance
+      name_prefix: ''
+      server:
+        name_suffix: ''
+        action: No-op
+        target_platform: FIAttached
+        wait_for_completion: false
+    templates:
+      server:
+        name_suffix: ''
+        target_platform: FIAttached
+        wait_for_completion: false

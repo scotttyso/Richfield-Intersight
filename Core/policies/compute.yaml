@@ -1,0 +1,78 @@
+---
+#=======================================
+#   Policies -> compute - Variables
+#=======================================
+intersight:
+  policies:
+    bios:
+      - bios_template: Virtualization_tpm
+        description: Virtualization_tpm BIOS Policy
+        name: Virtualization_tpm
+      - bios_template: M6_Virtualization_tpm
+        description: M6_Virtualization_tpm BIOS Policy
+        name: M6_Virtualization_tpm
+    boot_order:
+      - boot_devices:
+          - object_type: boot.VirtualMedia
+            name: kvm
+            subtype: kvm-mapped-dvd
+          - object_type: boot.LocalDisk
+            name: M2
+            slot: MSTOR-RAID-1
+          - interface_name: mgmt-a
+            object_type: boot.Pxe
+            name: pxe
+        boot_mode: Uefi
+        description: M2 Boot Order Policy
+        enable_secure_boot: false
+        name: M2
+      - boot_devices:
+          - object_type: boot.VirtualMedia
+            name: kvm
+            subtype: kvm-mapped-dvd
+          - object_type: boot.LocalDisk
+            name: M2
+            slot: MSTOR-RAID-1
+          - object_type: boot.UefiShell
+            name: uefishell
+        boot_mode: Uefi
+        description: M2-secure Boot Order Policy
+        enable_secure_boot: true
+        name: M2-secure
+      - boot_devices:
+          - object_type: boot.VirtualMedia
+            name: kvm
+            subtype: kvm-mapped-dvd
+          - object_type: boot.LocalDisk
+            name: mraid
+            slot: MRAID
+          - object_type: boot.UefiShell
+            name: uefishell
+        boot_mode: Uefi
+        description: MRAID Boot Order Policy
+        enable_secure_boot: true
+        name: MRAID
+    persistent_memory:
+      - description: pmem Persistent Memory Policy
+        management_mode: configured-from-intersight
+        memory_mode_percentage: '50'
+        name: pmem
+        namespaces:
+          - capacity: 1024
+            mode: raw
+            name: cpu0
+            socket_id: 1
+            socket_memory_id: Not Applicable
+        persistent_memory_type: app-direct
+        retain_namespaces: true
+    virtual_media:
+      - add_virtual_media:
+          - device_type: cdd
+            file_location: https://198.18.1.1/vmware.iso
+            mount_options: noauto
+            name: https-map
+            protocol: https
+        description: vmedia Virtual Media Policy
+        enable_low_power_usb: true
+        enable_virtual_media_encryption: true
+        name: vmedia
