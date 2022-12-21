@@ -1,0 +1,20 @@
+---
+#=============================================
+#   Policies -> fibre_channel - Variables
+#=============================================
+intersight:
+  policies:
+    fibre_channel_adapter:
+      - adapter_template: VMware
+        description: VMware Fibre-Channel Adapter Policy
+        name: VMware
+    fibre_channel_network:
+      - description: vsan-a Fibre-Channel Network Policy
+        name: vsan-a
+        vsan_id: 100
+      - description: vsan-b Fibre-Channel Network Policy
+        name: vsan-b
+        vsan_id: 200
+    fibre_channel_qos:
+      - description: fc-qos Fibre-Channel QoS Policy
+        name: fc-qos

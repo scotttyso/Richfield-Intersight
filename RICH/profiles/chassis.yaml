@@ -1,0 +1,25 @@
+---
+#=======================================
+#   Profiles -> Chassis - Variables
+#=======================================
+intersight:
+  profiles:
+    chassis:
+      - action: No-op
+        imc_access_policy: kvm
+        power_policy: '5108'
+        snmp_policy: snmp
+        targets:
+          - description: r142c-ucs-1 UCS Chassis Profile
+            name: r142c-1
+            serial_number: FOX2528PK0Z
+        thermal_policy: '5108'
+      - action: No-op
+        imc_access_policy: kvm
+        power_policy: '9508'
+        snmp_policy: snmp
+        targets:
+          - description: r142c-ucs-2 UCS Chassis Profile
+            name: r142c-2
+            serial_number: FOX2501P0BF
+        thermal_policy: '9508'

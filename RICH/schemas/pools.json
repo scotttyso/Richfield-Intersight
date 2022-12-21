@@ -112,7 +112,6 @@
             },
             "required": [
                 "assignment_order",
-                "description",
                 "ipv4_blocks",
                 "ipv4_config",
                 "name"

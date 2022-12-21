@@ -5,11 +5,11 @@
 intersight:
   policies:
     port:
-      - description: example-ucs Port Policy
+      - description: r142c Port Policy
         device_model: UCS-FI-6454
         names:
-          - example-ucs-a
-          - example-ucs-b
+          - r142c-a
+          - r142c-b
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policy: uplink
@@ -24,7 +24,7 @@ intersight:
               - 53
         port_channel_fc_uplinks:
           - admin_speed: 32Gbps
-            fill_pattern: Arbff
+            fill_pattern: Idle
             interfaces:
               - port_id: 1
               - port_id: 2
@@ -40,4 +40,9 @@ intersight:
               - 1
               - 4
         port_role_servers:
-          - port_list: 5-18
+          - connected_device_type: Chassis
+            device_number: 1
+            port_list: 17-18
+          - connected_device_type: Chassis
+            device_number: 2
+            port_list: 33-34

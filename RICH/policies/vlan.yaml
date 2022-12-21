@@ -17,5 +17,5 @@ intersight:
             native_vlan: true
             vlan_list: '1'
           - multicast_policy: mcast
-            name: default
-            vlan_list: 2-99
+            name: Core
+            vlan_list: 64,125-127,998-999,3001,3003-3004

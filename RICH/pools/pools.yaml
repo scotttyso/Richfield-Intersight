@@ -1,0 +1,106 @@
+---
+#=========================
+#   Pools - Variables
+#=========================
+intersight:
+  pools:
+    ip:
+      - assignment_order: sequential
+        description: kvm-inband IP Pool
+        ipv4_blocks:
+          - from: 10.100.125.51
+            size: 32
+        ipv4_config:
+          - gateway: 10.100.125.1
+            netmask: 255.255.255.0
+            primary_dns: 10.101.128.15
+            secondary_dns: 10.101.128.16
+        name: kvm-inband
+      - assignment_order: sequential
+        description: kvm-oob IP Pool
+        ipv4_blocks:
+          - from: 192.168.65.159
+            size: 16
+        ipv4_config:
+          - gateway: 192.168.64.1
+            netmask: 255.255.254.0
+            primary_dns: 10.101.128.15
+            secondary_dns: 10.101.128.16
+        name: kvm-oob
+    mac:
+      - assignment_order: sequential
+        description: mgmt-a MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:1A:00
+            size: 255
+        name: mgmt-a
+      - assignment_order: sequential
+        description: mgmt-b MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:1A:00
+            size: 255
+        name: mgmt-b
+      - assignment_order: sequential
+        description: migration-a MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:2A:00
+            size: 255
+        name: migration-a
+      - assignment_order: sequential
+        description: migration-b MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:2A:00
+            size: 255
+        name: migration-b
+      - assignment_order: sequential
+        description: storage-a MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:3A:00
+            size: 255
+        name: storage-a
+      - assignment_order: sequential
+        description: storage-b MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:3A:00
+            size: 255
+        name: storage-b
+      - assignment_order: sequential
+        description: dvs-a MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:4A:00
+            size: 255
+        name: dvs-a
+      - assignment_order: sequential
+        description: dvs-b MAC Pool
+        mac_blocks:
+          - from: 00:25:B5:C0:4A:00
+            size: 255
+        name: dvs-b
+    uuid:
+      - assignment_order: sequential
+        description: uuid UUID Pool
+        name: uuid
+        prefix: 000025B5-C000-0000
+        uuid_blocks:
+          - from: 0000-000000000000
+            size: 1024
+    wwnn:
+      - assignment_order: sequential
+        description: wwnn WWNN Pool
+        name: wwnn
+        id_blocks:
+          - from: 20:00:00:25:B5:C0:00:00
+            size: 1024
+    wwpn:
+      - assignment_order: sequential
+        description: wwpn-a WWPN Pool
+        name: wwpn-a
+        id_blocks:
+          - from: 20:00:00:25:B5:C0:1A:00
+            size: 255
+      - assignment_order: sequential
+        description: wwpn-b WWPN Pool
+        name: wwpn-b
+        id_blocks:
+          - from: 20:00:00:25:B5:C0:1B:00
+            size: 255

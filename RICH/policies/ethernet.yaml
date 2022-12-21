@@ -4,26 +4,10 @@
 #========================================
 intersight:
   policies:
-    adapter_configuration:
-      - description: adapter Adapter Configuration Policy
-        enable_fip: true
-        enable_lldp: true
-        enable_port_channel: true
-        fec_modes:
-          - cl91
-          - cl91
-          - cl91
-          - cl91
-        name: adapter
     ethernet_adapter:
       - adapter_template: VMware
         description: VMware Ethernet Adapter
         name: VMware
-    ethernet_network:
-      - default_vlan: '4'
-        description: network Ethernet Network Policy
-        name: network
-        vlan_mode: ACCESS
     ethernet_network_control:
       - action_on_uplink_fail: linkDown
         cdp_enable: true
@@ -32,23 +16,23 @@ intersight:
         mac_security_forge: allow
         name: ntwk-ctrl
     ethernet_network_group:
-      - allowed_vlans: 1-99
+      - allowed_vlans: 64,998-999,3001,3003-3004
         description: dvs Ethernet Network Group Policy
         name: dvs
-      - allowed_vlans: '5'
+      - allowed_vlans: '125'
         description: mgmt Ethernet Network Group Policy
         name: mgmt
-        native_vlan: 5
-      - allowed_vlans: '6'
+        native_vlan: 125
+      - allowed_vlans: '126'
         description: migration Ethernet Network Group Policy
         name: migration
-        native_vlan: 6
-      - allowed_vlans: '7'
+        native_vlan: 126
+      - allowed_vlans: '127'
         description: storage Ethernet Network Group Policy
         name: storage
-        native_vlan: 7
+        native_vlan: 127
       - action_on_uplink_fail: linkDown
-        allowed_vlans: 1-99
+        allowed_vlans: 64,125-127,998-999,3001,3003-3004
         description: Uplink Ethernet Network Group Policy
         name: uplink
         native_vlan: 1
@@ -81,29 +65,3 @@ intersight:
         name: Silver
         priority: Silver
         rate_limit: 0
-    iscsi_adapter:
-      - description: adapter iSCSI Adapter Policy
-        dhcp_timeout: 60
-        lun_busy_retry_count: 15
-        name: adapter
-        tcp_connection_timeout: 15
-    #iscsi_boot:
-    #  - authentication: chap
-    #    description: boot iSCSI Boot Policy
-    #    initiator_ip_source: DHCP
-    #    initiator_static_ipv4_config:
-    #    iscsi_adapter_policy: adapter
-    #    name: boot
-    #    primary_target_policy: target
-    #    secondary_target_policy: ''
-    #    target_source_type: Static
-    #    username: iscsiuser
-    iscsi_static_target:
-      - description: target iSCSI Static Target Policy
-        ip_address: 198.18.32.60
-        luns:
-          - bootable: true
-            lun_id: 0
-        name: target
-        port: 3260
-        target_name: iqn.1984-12.com.cisco:lnx1
