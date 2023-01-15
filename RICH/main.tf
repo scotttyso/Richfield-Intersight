@@ -37,9 +37,9 @@ module "pools" {
 # GUI Location: Infrastructure Service > Configure > Profiles : UCS Domain Profiles
 #_________________________________________________________________________________________
 module "domain_profiles" {
-  source = "/home/tyscott/terraform-cisco-modules/terraform-intersight-profiles-domain"
-  #source       = "terraform-cisco-modules/profiles-domain/intersight"
-  #version      = "1.0.10"
+  #source = "../terraform-intersight-profiles-domain"
+  source       = "terraform-cisco-modules/profiles-domain/intersight"
+  version      = "1.0.11"
   model        = local.model
   moids        = var.moids
   organization = var.organization
@@ -54,9 +54,9 @@ module "domain_profiles" {
 # GUI Location: Infrastructure Service > Configure > Policies
 #_________________________________________________________________________________________
 module "policies" {
-  source = "/home/tyscott/terraform-cisco-modules/terraform-intersight-policies"
-  #source       = "terraform-cisco-modules/policies/intersight"
-  #version      = "1.0.12"
+  #source = "../terraform-intersight-policies"
+  source       = "terraform-cisco-modules/policies/intersight"
+  version      = "1.0.15"
   domains      = module.domain_profiles.switch_profiles
   model        = local.model
   organization = var.organization
@@ -178,9 +178,9 @@ resource "time_sleep" "wait_for_server_discovery" {
 # GUI Location: Infrastructure Service > Configure > Profiles
 #_________________________________________________________________________________________
 module "profiles" {
-  source = "/home/tyscott/terraform-cisco-modules/terraform-intersight-profiles"
-  #source       = "terraform-cisco-modules/profiles/intersight"
-  #version      = "1.0.18"
+  #source = "../terraform-intersight-profiles"
+  source       = "terraform-cisco-modules/profiles/intersight"
+  version      = "1.0.19"
   model        = local.model
   moids        = var.moids
   organization = var.organization
