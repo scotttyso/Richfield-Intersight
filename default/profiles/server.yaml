@@ -8,22 +8,22 @@ intersight:
       - action: No-op
         targets:
           - name: r142c01
-            serial_number: FCH230776M8
+            serial_number: UNKNOWN
           - name: r142c02
-            serial_number: FCH222974YZ
+            serial_number: UNKNOWN
           - name: r142c03
-            serial_number: FCH213271VU
+            serial_number: UNKNOWN
+          - name: r142c04
+            serial_number: UNKNOWN
           - name: r142c05
-            serial_number: FCH21427BUQ
+            serial_number: UNKNOWN
           - name: r142c06
-            serial_number: FCH21427JDU
+            serial_number: UNKNOWN
           - name: r142c07
-            serial_number: FCH21427JG8
+            serial_number: UNKNOWN
         ucs_server_profile_template: m5-virtualization-raid
       - action: No-op
         targets:
           - name: r142c08
-            serial_number: FLM250803J8
-          - name: r142c04
             serial_number: FLM2509002F
         ucs_server_profile_template: m5-virtualization-m2

@@ -6,7 +6,7 @@
 # Begin Variables
 endpoint     = "intersight.com"
 moids        = true
-organization = "RICH"
+organization = "default"
 tags = [
   {
     key   = "Module"

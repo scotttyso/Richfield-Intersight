@@ -49,17 +49,17 @@ intersight:
             name: kvm
             subtype: kvm-mapped-dvd
           - object_type: boot.LocalDisk
-            name: mraid
-            slot: MRAID
+            name: FMEZZ1-SAS
+            slot: FMEZZ1-SAS
           - interface_name: mgmt-a
             object_type: boot.Pxe
             name: pxe
           - object_type: boot.UefiShell
             name: uefishell
         boot_mode: Uefi
-        description: MRAID Boot Order Policy
+        description: FMEZZ1-SAS Boot Order Policy
         enable_secure_boot: false
-        name: MRAID
+        name: FMEZZ1-SAS
     virtual_media:
       - description: vmedia Virtual Media Policy
         enable_low_power_usb: true

@@ -168,7 +168,9 @@ resource "time_sleep" "wait_for_server_discovery" {
     for v in keys(module.domain_profiles.switch_profiles) : 1 if module.domain_profiles.switch_profiles[v
   ].action == "Deploy"]) > 0 ? "30m" : "1s"
   triggers = {
-    always_run = "${timestamp()}"
+    always_run = length([
+    for v in keys(module.domain_profiles.switch_profiles) : 1 if module.domain_profiles.switch_profiles[v
+  ].action == "Deploy"]) > 0 ? "${timestamp()}" : 5
   }
 }
 
@@ -178,6 +180,9 @@ resource "time_sleep" "wait_for_server_discovery" {
 # GUI Location: Infrastructure Service > Configure > Profiles
 #_________________________________________________________________________________________
 module "profiles" {
+  depends_on = [
+    time_sleep.wait_for_server_discovery
+  ]
   #source = "../terraform-intersight-profiles"
   source       = "terraform-cisco-modules/profiles/intersight"
   version      = "1.0.19"
