@@ -11,7 +11,7 @@ intersight:
         target_platform: FIAttached
         vnics:
           - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: ntwk-ctrl
+            ethernet_network_control_policy: cdp
             ethernet_network_group_policy: mgmt
             ethernet_qos_policy: Silver
             mac_address_pools:
@@ -24,7 +24,7 @@ intersight:
               - 2
               - 3
           - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: ntwk-ctrl
+            ethernet_network_control_policy: cdp
             ethernet_network_group_policy: migration
             ethernet_qos_policy: Bronze
             mac_address_pools:
@@ -37,7 +37,7 @@ intersight:
               - 4
               - 5
           - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: ntwk-ctrl
+            ethernet_network_control_policy: cdp
             ethernet_network_group_policy: storage
             ethernet_qos_policy: Platinum
             mac_address_pools:

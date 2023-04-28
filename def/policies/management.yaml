@@ -1,0 +1,20 @@
+---
+#==========================================
+#   Policies -> management - Variables
+#==========================================
+intersight:
+  policies:
+    syslog:
+      - description: Syslog Policy
+        local_logging:
+          minimum_severity: warning
+        name: syslog_test
+        remote_logging:
+          server1:
+            enable: true
+            hostname: 10.101.128.24
+            minimum_severity: warning
+          server2:
+            enable: true
+            hostname: 10.101.128.25
+            minimum_severity: warning

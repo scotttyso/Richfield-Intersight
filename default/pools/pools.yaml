@@ -10,7 +10,7 @@ intersight:
         ipv4_blocks:
           - from: 10.100.125.51
             size: 32
-        ipv4_config:
+        ipv4_configuration:
           - gateway: 10.100.125.1
             netmask: 255.255.255.0
             primary_dns: 10.101.128.15
@@ -21,7 +21,7 @@ intersight:
         ipv4_blocks:
           - from: 192.168.65.159
             size: 16
-        ipv4_config:
+        ipv4_configuration:
           - gateway: 192.168.64.1
             netmask: 255.255.254.0
             primary_dns: 10.101.128.15

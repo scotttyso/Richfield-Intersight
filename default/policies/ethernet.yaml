@@ -11,10 +11,10 @@ intersight:
     ethernet_network_control:
       - action_on_uplink_fail: linkDown
         cdp_enable: true
-        description: ntwk-ctrl Ethernet Network Control Policy
+        description: cdp Ethernet Network Control Policy
         mac_register_mode: nativeVlanOnly
         mac_security_forge: allow
-        name: ntwk-ctrl
+        name: cdp
     ethernet_network_group:
       - allowed_vlans: 64,998-999,3001,3003-3004
         description: dvs Ethernet Network Group Policy

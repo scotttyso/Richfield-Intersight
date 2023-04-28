@@ -1,0 +1,31 @@
+---
+defaults:
+  intersight:
+    pools:
+      assignment_order: 'sequential'
+      ip:
+        ipv4_config:
+          primary_dns: 208.67.220.220
+        ipv6_config:
+          primary_dns: 2620:119:53::53
+        name_suffix: ''
+      iqn:
+        name_suffix: ''
+        iqn_blocks:
+          suffix: ucs-host
+        prefix: ''
+      mac:
+        name_suffix: ''
+      name_prefix: ''
+      resource:
+        name_suffix: ''
+        pool_type: Static
+        resource_type: Server
+        server_type: Blades
+      uuid:
+        name_suffix: ''
+        prefix: 000025B5-0000-0000
+      wwnn:
+        name_suffix: ''
+      wwpn:
+        name_suffix: ''
